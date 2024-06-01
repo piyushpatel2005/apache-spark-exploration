@@ -18,8 +18,8 @@ resolvers ++= Seq(
 
 
 libraryDependencies ++= Seq(
-  "org.apache.spark" %% "spark-core" % sparkVersion,
-  "org.apache.spark" %% "spark-sql" % sparkVersion,
+  "org.apache.spark" %% "spark-core" % sparkVersion withSources() withJavadoc(),
+  "org.apache.spark" %% "spark-sql" % sparkVersion withSources() withJavadoc(),
   // logging
   "org.apache.logging.log4j" % "log4j-api" % log4jVersion,
   "org.apache.logging.log4j" % "log4j-core" % log4jVersion,

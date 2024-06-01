@@ -26,5 +26,3 @@ The code is written in Scala and can be executed in local spark mode or in a clu
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-```
-

@@ -1,0 +1,13 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{properties, yml}]
+properties_spaces_around_key_value_delimiter = true
+
+[*.{groovy,gradle,java,kt,xml,scala}]
+continuation_indent_size = 4
