@@ -1,9 +1,10 @@
 package section1.dataframes
 
 import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
 
-object DataFrameIntro extends App {
+object DataFrameIntro03 extends App {
     // 1. Create spark session
 
     val spark = SparkSession.builder()
@@ -58,6 +59,31 @@ object DataFrameIntro extends App {
 
     dfWithSchema.show(5)
 
+    // 10. Select fields
+    dfWithSchema.select("Transaction_ID", "Price_per_Unit", "Customer_ID")
+        .show(2)
+    dfWithSchema
+        .select(
+            col("transaction_id"),
+            col("price_per_unit"),
+            col("customer_id")
+        )
+        .show(2)
+
+    dfWithSchema
+        .selectExpr("Transaction_ID", "Price_per_Unit * 0.9", "Customer_ID")
+        .show(2)
+    dfWithSchema
+        .select(
+            expr("Transaction_ID"),
+            expr("Price_per_Unit * 0.9"),
+            expr("Customer_ID")
+        ).show(2)
+
+    import spark.implicits._
+    dfWithSchema.select($"Transaction_ID", $"Price_per_Unit", $"Customer_ID").show(2)
+    dfWithSchema.select('Transaction_ID, 'Price_per_Unit, 'Customer_ID).show(2)
+
     dfWithSchema.printSchema()
 
     /**
@@ -80,4 +106,8 @@ object DataFrameIntro extends App {
     df2.show()
 
     // More options here: https://spark.apache.org/docs/latest/sql-data-sources-csv.html
+
+    val customers = Seq("CUST001", "CUST002")
+    df2.filter(col("Customer_ID").isin(customers: _*)).show()
+    df2.groupBy()
 }

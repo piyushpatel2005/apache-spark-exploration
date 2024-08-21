@@ -3,7 +3,7 @@ package basics
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.SparkSession.setActiveSession
 
-object CreatingSession extends App {
+object CreatingSession01 extends App {
     val spark = SparkSession.builder()
         .appName("CreatingSession")
         .config("spark.master", "local")

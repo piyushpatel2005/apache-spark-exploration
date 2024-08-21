@@ -3,3 +3,5 @@ target/
 *.iml
 *.ipr
 .bsp/
+.pyspark-env/
+src/main/resources/warehouse

@@ -1,9 +1,9 @@
 package basics
 
 import org.scalatest.funspec.AnyFunSpec
-import utils.SparkSessionTestWrapper
+import utils.SparkTestSessionWrapper
 
-class FirstWordCountSpec extends AnyFunSpec with SparkSessionTestWrapper {
+class FirstWordCountSpec extends AnyFunSpec with SparkTestSessionWrapper {
     describe("basics.FirstWordCountTest") {
         it("should return a numbers dataframe with 3 rows") {
             val numbersDf = FirstDataFrame.getNumbersDf()

@@ -1,6 +1,6 @@
 # Spark Exploration
 
-This repository contains a series of Spark Scala code that explore the capabilities of Apache Spark. 
+This repository contains a series of Spark Scala code that explore the capabilities of Apache Spark.
 The code is written in Scala and can be executed in local spark mode or in a cluster.
 
 ## Requirements
@@ -22,6 +22,24 @@ The code is written in Scala and can be executed in local spark mode or in a clu
 
 - **Basics**: Basic operations with Spark.
 - **Sections 1: DataFrames**: Basic operations with Spark DataFrames.
+  - DataFrame Introduction: Create from CSV file, selecting fields, printing schema, and show data.
+  - DataFrame Creation from CSV, JSON, Parquet, Sequence, and Text files.
+  - DataFrame Operations: filter, map, groupBy, agg, orderBy
+  - DataFrame Joins: inner, outer, left, right, semi, anti, cross
+
+- **Posts**: Contains the code for the blog post series.
+
+
+## Tutorials
+
+If you're new to Spark, check out these tutorials which cover Spark in fair bit of details.
+
+- [Spark Overview](notes/apache-spark-overview/index.md)
+- [Spark Architecture](notes/apache-spark-architecture/index.md)
+- [Spark Development Setup](notes/apache-spark-dev-setup/index.md)
+- [Spark Shell](notes/spark-shell/index.md)
+- [Spark DataFrames](notes/intro-to-dataframes/index.md)
+-
 
 ## License
 
