@@ -1,11 +1,11 @@
-package section1.dataframes
+package lessons.section1.dataframes
 
+import org.apache.spark.sql.types.StructType
 import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 
-import scala.collection.JavaConverters.asJavaIterableConverter
+import lessons.domains._
 
-
-object DataFrameCreation04 {
+object DataFrameSources04 {
     val spark = SparkSession.builder()
         .appName("DataFrameCreation")
         .config("spark.master", "local")
@@ -71,6 +71,26 @@ object DataFrameCreation04 {
         df
     }
 
+    def dfFromJson(options: Map[String, String]): DataFrame = {
+        val df = spark.read
+            .options(options)
+            .json("src/main/resources/data/ecommerce/products.json")
+
+        df.show()
+
+        df
+    }
+
+    def dfFromJsonWithSchema(schema: StructType, location: String): DataFrame = {
+        val df = spark.read
+            .schema(schema)
+            .json(location)
+
+        df.show()
+
+        df
+    }
+
     def writeOrc(df: DataFrame, path: String): Unit = {
         df.write
             .mode(SaveMode.Overwrite)
@@ -90,15 +110,31 @@ object DataFrameCreation04 {
             .csv(path)
     }
 
+    def writeJson(df: DataFrame, path: String): Unit = {
+        df.write
+            .mode(SaveMode.Overwrite)
+            .json(path)
+    }
+
     def main(args: Array[String]): Unit = {
         dfFromSeq()
         dfFromCsv()
         val rowsDf = dfFromRow()
         dfFromJson()
+        dfFromJson(
+            Map(
+                "multiLine" -> "false",
+                "mode" -> "PERMISSIVE",
+                "columnNameOfCorruptRecord" -> "_corrupt_record",
+                "lineSep" -> "\n",
+                "dropFieldIfAllNull" -> "false"
+            )
+        )
+        dfFromJsonWithSchema(productsSchema, "src/main/resources/data/ecommerce/products.json")
 
-        writeOrc(rowsDf, "src/main/resources/warehouse/rows_orc/")
-        writeParquet(rowsDf, "src/main/resources/warehouse/rows_parquet/")
-        writeCsv(rowsDf, "src/main/resources/warehouse/rows_csv/")
+//        writeOrc(rowsDf, "src/main/resources/warehouse/rows_orc/")
+//        writeParquet(rowsDf, "src/main/resources/warehouse/rows_parquet/")
+//        writeCsv(rowsDf, "src/main/resources/warehouse/rows_csv/")
     }
 
 }

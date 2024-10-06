@@ -1,8 +1,10 @@
-package section1.dataframes
+package lessons.section1.dataframes
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
+
+import lessons.domains._
 
 object DataFrameIntro03 extends App {
     // 1. Create spark session
@@ -33,21 +35,6 @@ object DataFrameIntro03 extends App {
     // 7. Count rows
     val count = df.count()
     println(s"Count of rows: $count")
-
-    // 8. Defining schema
-    val salesSchema = StructType(
-        Array(
-            StructField("Transaction_ID", StringType),
-            StructField("Date", StringType),
-            StructField("Customer_ID", StringType),
-            StructField("Gender", StringType),
-            StructField("Age", IntegerType),
-            StructField("Product_Category", StringType),
-            StructField("Quantity", IntegerType),
-            StructField("Price_per_Unit", DoubleType),
-            StructField("Total_Amount", DoubleType)
-        )
-    )
 
     // 9. Using schema with format method
     val dfWithSchema = spark.read

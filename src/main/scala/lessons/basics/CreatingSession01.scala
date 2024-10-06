@@ -1,4 +1,4 @@
-package basics
+package lessons.basics
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.SparkSession.setActiveSession

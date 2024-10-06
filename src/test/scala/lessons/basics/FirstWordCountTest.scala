@@ -1,4 +1,4 @@
-package basics
+package lessons.basics
 
 import org.scalatest.funspec.AnyFunSpec
 import utils.SparkTestSessionWrapper

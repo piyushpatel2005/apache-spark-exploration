@@ -5,7 +5,7 @@ The code is written in Scala and can be executed in local spark mode or in a clu
 
 ## Requirements
 
-- Java 11
+- Java 17
 - Scala 2.12
 - Apache Spark 3.5.1
 - SBT
@@ -39,7 +39,11 @@ If you're new to Spark, check out these tutorials which cover Spark in fair bit 
 - [Spark Development Setup](notes/apache-spark-dev-setup/index.md)
 - [Spark Shell](notes/spark-shell/index.md)
 - [Spark DataFrames](notes/intro-to-dataframes/index.md)
--
+- [Spark Data Sources](notes/data-sources/index.md)
+- [Spark DataFrames Operations](notes/dataframe-operations/index.md)
+- [Spark Joins](notes/types-of-joins/index.md)
+- [Spark Aggregations](notes/aggregations/index.md)
+- [Spark SQL](notes/spark-sql/index.md)
 
 ## License
 
