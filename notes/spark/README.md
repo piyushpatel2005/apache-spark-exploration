@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Apache Spark Tutorials
 
 Apache spark is a distributed computing system that is used for big data processing and analytics. It is built on top of Hadoop and provides an easy to use API for Scala, Java, Python, and R. This repository contains a series of tutorials that cover the basics of Apache Spark.

@@ -34,16 +34,8 @@ The code is written in Scala and can be executed in local spark mode or in a clu
 
 If you're new to Spark, check out these tutorials which cover Spark in fair bit of details.
 
-- [Spark Overview](notes/spark/apache-spark-overview/index.md)
-- [Spark Architecture](notes/spark/apache-spark-architecture/index.md)
-- [Spark Development Setup](notes/spark/apache-spark-dev-setup/index.md)
-- [Spark Shell](notes/spark/spark-shell/index.md)
-- [Spark DataFrames](notes/spark/intro-to-dataframes/index.md)
-- [Spark Data Sources](notes/spark/data-sources/index.md)
-- [Spark DataFrames Operations](notes/spark/dataframe-operations/index.md)
-- [Spark Joins](notes/spark/types-of-joins/index.md)
-- [Spark Aggregations](notes/spark/aggregations/index.md)
-- [Spark SQL](notes/spark-sql/index.md)
+
+- [Spark Tutorials](notes/spark/README.md)
 
 ## License
 
